@@ -1,0 +1,4 @@
+C:\Users\User\Desktop\Lab3\Ex1\Debug\Ex1.exe
+C:\Users\User\Desktop\Lab3\Ex1\Debug\Ex1.pdb
+C:\Users\User\Desktop\files to sort\Lab3\Ex1\Debug\Ex1.exe
+C:\Users\User\Desktop\files to sort\Lab3\Ex1\Debug\Ex1.pdb
