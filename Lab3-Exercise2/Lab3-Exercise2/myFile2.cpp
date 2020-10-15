@@ -28,13 +28,30 @@ Evaluation* add(Evaluation* eval, int& num)
     Evaluation* prev_elm = eval;
     Evaluation* last_elm = eval;
 
-    cout << "Please enter the number of the element that preceeds the spot you would like this element to be." << endl;
-    std::cin >> index;
-    cout << "Please enter the student's name." << endl;
-    std::cin >> new_elm->student;
-    cout << "Please enter the student's grade." << endl;
-    std::cin >> new_elm->grade;
+    if (num == 0) { //if num = 0, then this is the first element in the list
+        cout << "This is the first student of the list. Please enter the student's name: " << endl; 
+        cin >> new_elm->student; 
+        cout << "Please enter this student's grade: " << endl; 
+        cin >> new_elm->grade; 
+    }
+    else { //if  num!=0, then this is not the first element in the list
+        do {
 
+            cout << "Please enter the number of the element that preceeds the spot you would like this element to be: " << endl;
+            cin >> index;
+            if (index == -1 || index < -1 ) { 
+                cout << "That is an invalid number! Please try again!" << endl; 
+            }
+            cout << "Please enter the student's name: " << endl; 
+            cin >> new_elm->student; 
+            cout << "Please enter the student's grade: " << endl; 
+            cin >> new_elm->grade; 
+
+        } while (index < 0); 
+        
+    } //closes if block
+
+	
     if (num == 0) {
         cout << "This is the first element in the list." << endl;
         new_elm->next = (eval);
@@ -86,8 +103,19 @@ Evaluation* remove(Evaluation* eval, int& num)
     int count = 0;
     int index;
 
-    cout << "Please enter the index of the element that you would like to remove." << endl;
-    std::cin >> index;
+    do {
+        cout << "Please enter the index of the element that you would like to remove:" << endl;
+        std::cin >> index;
+
+        if (index > num || index < 0) {
+            cout << "Please enter a valid index number!" << endl; 
+        }//closes if
+
+    } while (index > num || index < 0); 
+    
+    cout << "The following entry will be removed: " << endl; 
+    getIndex(current, index);
+    cout << current->student << ": " << current->grade << endl;
 
     getIndex(current, index);
     cout << current->student << endl;
